@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gutyagutya-app/static/css/main.2b7e430b.css",
+    "main.js": "/gutyagutya-app/static/js/main.e6979fb3.js",
+    "static/js/787.c5e9cb20.chunk.js": "/gutyagutya-app/static/js/787.c5e9cb20.chunk.js",
+    "index.html": "/gutyagutya-app/index.html",
+    "main.2b7e430b.css.map": "/gutyagutya-app/static/css/main.2b7e430b.css.map",
+    "main.e6979fb3.js.map": "/gutyagutya-app/static/js/main.e6979fb3.js.map",
+    "787.c5e9cb20.chunk.js.map": "/gutyagutya-app/static/js/787.c5e9cb20.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b7e430b.css",
+    "static/js/main.e6979fb3.js"
+  ]
+}
