@@ -1,7 +1,7 @@
 function Help() {
     return (
       <div className="Help">
-        使用方法<br />
+        <h1>使用方法</h1>
         １．一番上のテキストボックスに適当な文を入れます。<br />
         ２．レベルを選択します。<br />
         　　文字種を変える時はLv.3以上<br />

@@ -54,7 +54,7 @@ const Form = () => {
 
     const isSeparator = (c:string) : boolean =>{
       //空白文字
-      const pattern = "/^([\s]|　)+?$/";
+      const pattern = /^([\s]|　)+?$/u;
       if(c.match(pattern)){return true;}
       //句読点やら
       if("\r\n,.、。・;:'\"\\".includes(c)){return true;}
@@ -73,11 +73,22 @@ const Form = () => {
       //TODO getNextCharでずらした先が問題のある文字の場合に飛ばす
       if(isSeparator(c)){return true;}
       if(isNumber(c)){return true;}
+
+      //Cnは動作しているかも
+      //Cc	Control	a C0 or C1 control code
+      //Cf	Format	a format control character
+      //Cs	Surrogate	a surrogate code point
+      //Co	Private_Use	a private-use character
+      //Cn	Unassigned	a reserved unassigned code point or a noncharacter
+      //C	Other	Cc | Cf | Cs | Co | Cn
+      const patternUnassigned = /^\p{C}$/u;
+      if(c.match(patternUnassigned)){return true;}
+      
       return false;
     }
     const getNextChar = (c:string,inc:number,round:RoundRange):string => {
-      //数字はややこしくなるためそのまま
-      if(isNumber(c)){return c;}
+      //数字等はややこしくなるためそのまま
+      if(isSkipChar(c)){return c;}
       do{
         let n = c.codePointAt(0)!;
         n += inc;
@@ -168,7 +179,7 @@ const Form = () => {
     const RoundRangeSelector = () => {
       const onRoundRangeChange = (e:React.ChangeEvent<HTMLSelectElement>) => {
         for(const range of RoundRanges){
-          if(e.target.value == range.Name){
+          if(e.target.value === range.Name){
             setRoundRange(range);
           }
         }
