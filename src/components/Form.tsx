@@ -37,6 +37,10 @@ const RoundRanges = [new RoundRange("選択",0,0),
                     new RoundRange("カンナダ文字" , 0x0C80, 0x0CF3),
                     //マラヤーラム文字 ഀ - ൿ
                     new RoundRange("マラヤーラム文字" , 0x0D00, 0x0D7F),
+                    
+                    //パスパ文字 ꡀ - ꡷
+                    new RoundRange("パスパ文字" , 0xA840, 0xA87E),
+
 ];
 const RoundRangeOptions = RoundRanges.map((range) => {
   return (
