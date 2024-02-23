@@ -4,15 +4,24 @@ import Help from "./Help";
 
 class RoundRange{
   Name:string;
+  DisplayName:string;
   Minimum:number;
   Maximum:number;
   Range:number;
+  Key:string;
 
   constructor(name:string,min:number,max:number){
     this.Name = name;
+    if(min === 0){
+      this.DisplayName = name;
+    }else{
+      this.DisplayName = name + " : " + String.fromCodePoint(min) + " - " + String.fromCharCode(max);
+    }
     this.Minimum = min;
     this.Maximum = max;
     this.Range = max - min + 1;
+
+    this.Key = min.toString() + "-" + max.toString();
   }
 }
 const RoundRanges = [new RoundRange("選択",0,0),
@@ -38,14 +47,22 @@ const RoundRanges = [new RoundRange("選択",0,0),
                     //マラヤーラム文字 ഀ - ൿ
                     new RoundRange("マラヤーラム文字" , 0x0D00, 0x0D7F),
                     
+                    //ヒエログリフ 𓀀 - 𓃟
+                    new RoundRange("ヒエログリフ" , 0x13000, 0x1342F),
+
+
+
                     //パスパ文字 ꡀ - ꡷
                     new RoundRange("パスパ文字" , 0xA840, 0xA87E),
+                    
+                    //ブラーフミー文字 $𑀀 -𑁵
+                    new RoundRange("ブラーフミー文字" , 0x11000, 0x1107F),
 
 ];
 const RoundRangeOptions = RoundRanges.map((range) => {
   return (
-    <option value={range.Name} key={range.Name}>
-      {range.Name}
+    <option value={range.Name} key={range.Key}>
+      {range.DisplayName}
     </option>
   );
 });
@@ -203,7 +220,8 @@ const Form = () => {
           <div className="SrcText">
             <textarea name="srcText" onChange={e => {setSrcText(e.target.value); cnvGutyaGutya(e.target.value);}}>{srcText}</textarea>
           </div>
-          <select onChange={e => {
+          <div className="SelectorParent">
+          <select className="SelectorChild" onChange={e => {
               setLevel(Number(e.target.value));
               cnvGutyaGutya(srcText);
               }}>
@@ -213,11 +231,11 @@ const Form = () => {
             <option value="4">Lv.4</option>
             <option value="5">Lv.5</option>
           </select>
-          <RoundRangeSelector />
-          <button onClick={e => cnvGutyaGutya(srcText)}>更新</button>
+            <RoundRangeSelector />
+            <button className="SelectorChild" onClick={e => cnvGutyaGutya(srcText)}>更新</button>
+          </div>
           <div>
-            Lv.{level}
-            {roundRange.Name}
+            Lv.{level} {roundRange.Name}
           </div>
           <div className="DstText">
             <textarea name="dstText" value={dstText} readOnly />

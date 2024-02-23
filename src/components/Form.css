@@ -4,3 +4,10 @@
 .DstText {
   text-align: center;
 }
+.SelectorParent {
+  display: flex;
+  justify-content: center;
+}
+.SelectorChild{
+  text-align: center;
+}

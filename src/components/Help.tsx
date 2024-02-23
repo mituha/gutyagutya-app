@@ -1,3 +1,5 @@
+import "./Help.css";
+
 function Help() {
     return (
       <div className="Help">
