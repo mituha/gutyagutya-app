@@ -58,6 +58,9 @@ const RoundRanges = [new RoundRange("選択",0,0),
                     //ブラーフミー文字 $𑀀 -𑁵
                     new RoundRange("ブラーフミー文字" , 0x11000, 0x1107F),
 
+                    //ヴァイ文字
+                    new RoundRange("ヴァイ文字" , 0xA500, 0xA62B),
+
 ];
 const RoundRangeOptions = RoundRanges.map((range) => {
   return (
