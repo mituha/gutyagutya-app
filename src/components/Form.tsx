@@ -61,6 +61,8 @@ const RoundRanges = [new RoundRange("選択",0,0),
                     //ヴァイ文字
                     new RoundRange("ヴァイ文字" , 0xA500, 0xA62B),
 
+                    //デーヴァナーガリー  サンスクリット語
+                    new RoundRange("デーヴァナーガリー" , 0x0900, 0x097F),
 ];
 const RoundRangeOptions = RoundRanges.map((range) => {
   return (
