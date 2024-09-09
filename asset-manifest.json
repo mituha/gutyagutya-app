@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/gutyagutya-app/static/css/main.195b52d2.css",
-    "main.js": "/gutyagutya-app/static/js/main.292415b6.js",
+    "main.js": "/gutyagutya-app/static/js/main.ca7dc515.js",
     "static/js/787.c5e9cb20.chunk.js": "/gutyagutya-app/static/js/787.c5e9cb20.chunk.js",
     "index.html": "/gutyagutya-app/index.html",
     "main.195b52d2.css.map": "/gutyagutya-app/static/css/main.195b52d2.css.map",
-    "main.292415b6.js.map": "/gutyagutya-app/static/js/main.292415b6.js.map",
+    "main.ca7dc515.js.map": "/gutyagutya-app/static/js/main.ca7dc515.js.map",
     "787.c5e9cb20.chunk.js.map": "/gutyagutya-app/static/js/787.c5e9cb20.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.195b52d2.css",
-    "static/js/main.292415b6.js"
+    "static/js/main.ca7dc515.js"
   ]
 }
