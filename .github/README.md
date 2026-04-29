@@ -1,6 +1,11 @@
 ぐちゃぐちゃ / GutyaGutya-App
 =========================
 
+新しいバージョンを
+https://mituha.github.io/GutyaGutya3/
+で公開しています
+
+
 https://kakuyomu.jp/works/16817330667441159808
 
 用に作ったプログラムを近い形でWEB上で実行できるようにしたものです。
